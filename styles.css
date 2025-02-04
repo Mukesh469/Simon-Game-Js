@@ -75,7 +75,6 @@ body {
   }
 }
 
-/* Mobile View (Max-width: 576px) */
 @media (max-width: 576px) {
   #level-title {
     font-size: 2rem;
@@ -84,12 +83,30 @@ body {
 
   .container {
     width: 90%;
-    flex-direction: column;
   }
 
   .btn {
     height: 120px;
     width: 120px;
-    margin: 15px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #level-title {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    height: 110px;
+    width: 110px;
+    border: 6px solid black;
+    margin: 8px;
   }
 }
