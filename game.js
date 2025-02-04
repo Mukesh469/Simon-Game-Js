@@ -7,7 +7,13 @@ var gamePattern = [];
 var level = 0;
 var start = false;
 
-$(document).keypress(function () {
+if ($(window).width() <= 768) {
+  $("h1").text("Touch Anywhere to Restart");
+} else {
+  $("h1").text("Press Any key to Restart");
+}
+
+$(document).on("keypress touchstart", function () {
   if (!start) {
     $("#level-title").text("Level" + level);
     nextSequence();
@@ -47,7 +53,11 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
 
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    if ($(window).width() <= 768) {
+      $("#level-title").text("Game Over, Touch Anywhere to Restart");
+    } else {
+      $("#level-title").text("Game Over, Press Any Key to Restart");
+    }
 
     // Reset the game
     start = false;
